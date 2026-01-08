@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Login Notification</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7fa;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f7fa; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); padding: 40px 30px; border-radius: 12px 12px 0 0; text-align: center;">
+              <div style="width: 60px; height: 60px; background-color: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 30px;">🔐</span>
+              </div>
+              <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">New Login Detected</h1>
+            </td>
+          </tr>
+          
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px 30px;">
+              <p style="color: #333333; font-size: 18px; margin: 0 0 20px 0;">
+                Hi {{ userName }},
+              </p>
+              
+              <p style="color: #555555; font-size: 16px; line-height: 1.6; margin: 0 0 25px 0;">
+                We detected a new login to your account. If this was you, no action is needed. If you didn't log in, please secure your account immediately.
+              </p>
+              
+              <!-- Login Details Box -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f8f9fa; border-radius: 8px; margin-bottom: 25px;">
+                <tr>
+                  <td style="padding: 20px;">
+                    <p style="color: #333333; font-size: 14px; font-weight: 600; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                      Login Details
+                    </p>
+                    
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td style="padding: 8px 0; border-bottom: 1px solid #e9ecef;">
+                          <span style="color: #888888; font-size: 14px;">Time:</span>
+                        </td>
+                        <td style="padding: 8px 0; border-bottom: 1px solid #e9ecef; text-align: right;">
+                          <span style="color: #333333; font-size: 14px; font-weight: 500;">{{ loginTime }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px 0; border-bottom: 1px solid #e9ecef;">
+                          <span style="color: #888888; font-size: 14px;">IP Address:</span>
+                        </td>
+                        <td style="padding: 8px 0; border-bottom: 1px solid #e9ecef; text-align: right;">
+                          <span style="color: #333333; font-size: 14px; font-weight: 500;">{{ ipAddress }}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px 0;">
+                          <span style="color: #888888; font-size: 14px;">Device:</span>
+                        </td>
+                        <td style="padding: 8px 0; text-align: right;">
+                          <span style="color: #333333; font-size: 14px; font-weight: 500; word-break: break-word;">{{ userAgent }}</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- Warning Box -->
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; margin-bottom: 25px;">
+                <tr>
+                  <td style="padding: 15px;">
+                    <p style="color: #856404; font-size: 14px; margin: 0; line-height: 1.5;">
+                      <strong>Wasn't you?</strong> If you didn't make this login, your account may be compromised. Please change your password immediately and review your account activity.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- CTA Button -->
+              <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+                <tr>
+                  <td style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); border-radius: 8px;">
+                    <a href="{{ securityUrl }}" style="display: inline-block; padding: 14px 35px; color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 600;">
+                      Review Security Settings
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="background-color: #f8f9fa; padding: 25px 30px; border-radius: 0 0 12px 12px; text-align: center;">
+              <p style="color: #888888; font-size: 13px; margin: 0;">
+                © {{ year }} Social Auth App. All rights reserved.
+              </p>
+              <p style="color: #aaaaaa; font-size: 12px; margin: 10px 0 0 0;">
+                This is a security notification. You're receiving this because a login was detected on your account.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
